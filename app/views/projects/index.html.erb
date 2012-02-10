@@ -1,0 +1,13 @@
+<%= link_to '添加新项目', new_project_path %>
+
+<h2>项目列表</h2>
+<ul>
+	<% @projects.each do |project| %>
+	<li><%= project.name %>
+		<%= link_to 'Show', project_path(project) %>
+		<%= link_to 'Edit', edit_project_path(project) %>
+		<%= link_to 'Delete', :method => :delete %>
+		</li>
+	<% end %>
+</ul>
+	
