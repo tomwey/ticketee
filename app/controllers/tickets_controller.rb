@@ -23,6 +23,19 @@ class TicketsController < ApplicationController
     end
   end
   
+  def edit
+  end
+  
+  def update
+    if @ticket.update_attributes(params[:ticket])
+      flash[:notice] = "Ticket has been updated."
+      redirect_to project_ticket_path
+    else
+      flash[:alert] = "Ticket has not been updated."
+      render :action => "edit"
+    end
+  end
+  
   private
   
   def find_project
