@@ -2,6 +2,9 @@ class TicketsController < ApplicationController
   before_filter :find_project
   before_filter :find_ticket, :only => [:show,:edit,:update,:destroy]
   
+  def index
+    @tickets = @project.tickets;
+  end
   def show
   end
   
